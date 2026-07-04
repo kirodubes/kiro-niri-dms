@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Kiro Niri MDS
+Name=Kiro Niri dms
 Comment=Kiro niri edition (niri + DankMaterialShell)
-Exec=kiro-niri-mds-session
+Exec=kiro-niri-dms-session
 Type=Application
 DesktopNames=niri

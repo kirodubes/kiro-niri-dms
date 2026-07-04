@@ -7,11 +7,11 @@
 #
 # Purpose:
 #   Session entrypoint for the Kiro niri (DankMaterialShell) edition,
-#   invoked by kiro-niri-mds.desktop. Points niri at this edition's own
-#   config folder (~/.config/kiro-niri-mds/) via NIRI_CONFIG, then hands
+#   invoked by kiro-niri-dms.desktop. Points niri at this edition's own
+#   config folder (~/.config/kiro-niri-dms/) via NIRI_CONFIG, then hands
 #   off to the stock niri-session (which starts niri.service under systemd).
 # Why:
-#   kiro-niri, kiro-ohmyniri and kiro-niri-mds all target niri but ship
+#   kiro-niri, kiro-ohmyniri and kiro-niri-dms all target niri but ship
 #   different configs. Sharing ~/.config/niri/ means switching editions
 #   inherits another one's stale config. A per-edition NIRI_CONFIG folder
 #   keeps them cleanly separate. niri-session runs `systemctl --user
@@ -19,7 +19,7 @@
 #   also set-environment it directly to be robust against the re-exec.
 #####################################################################
 
-NIRI_CONFIG="$HOME/.config/kiro-niri-mds/config.kdl"
+NIRI_CONFIG="$HOME/.config/kiro-niri-dms/config.kdl"
 export NIRI_CONFIG
 systemctl --user set-environment "NIRI_CONFIG=$NIRI_CONFIG" 2>/dev/null || true
 

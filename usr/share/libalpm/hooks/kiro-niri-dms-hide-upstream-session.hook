@@ -1,6 +1,6 @@
 # Re-hide upstream niri's plain "Niri" session after any niri install/upgrade
 # restores /usr/share/wayland-sessions/niri.desktop. Keeps the Kiro niri entries
-# the only selectable "Niri". See /usr/bin/kiro-niri-mds-hide-upstream-session.
+# the only selectable "Niri". See /usr/bin/kiro-niri-dms-hide-upstream-session.
 [Trigger]
 Operation = Install
 Operation = Upgrade
@@ -8,6 +8,6 @@ Type = Path
 Target = usr/share/wayland-sessions/niri.desktop
 
 [Action]
-Description = Hiding upstream Niri session (Kiro Niri MDS is the supported entry)...
+Description = Hiding upstream Niri session (Kiro Niri dms is the supported entry)...
 When = PostTransaction
-Exec = /usr/bin/kiro-niri-mds-hide-upstream-session
+Exec = /usr/bin/kiro-niri-dms-hide-upstream-session

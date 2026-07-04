@@ -18,7 +18,7 @@ spawn-sh-at-startup "dms run"
 // from it). Self-guards on a stamp file, so it is a no-op on every later login
 // and never fights a wallpaper the user later picks. Runs in the background so
 // it can poll for DMS's IPC to come up without blocking the rest of startup.
-spawn-sh-at-startup "~/.config/kiro-niri-mds/scripts/firstrun-wallpaper.sh"
+spawn-sh-at-startup "~/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh"
 
 // Create the XDG user dirs (Documents, Music, Pictures, …) on first login —
 // niri doesn't run the xdg-user-dirs autostart, so do it explicitly. Idempotent.

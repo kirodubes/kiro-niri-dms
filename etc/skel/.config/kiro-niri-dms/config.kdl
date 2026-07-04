@@ -2,8 +2,8 @@
 // Kiro niri (DankMaterialShell) baseline config  (config.kdl)
 // ════════════════════════════════════════════════════════════════════════
 // Target: niri (scrollable-tiling Wayland compositor). Config format: KDL.
-// Lives at: ~/.config/kiro-niri-mds/config.kdl  (niri is pointed here by the
-// kiro-niri-mds-session wrapper via NIRI_CONFIG; the sibling kiro-niri and
+// Lives at: ~/.config/kiro-niri-dms/config.kdl  (niri is pointed here by the
+// kiro-niri-dms-session wrapper via NIRI_CONFIG; the sibling kiro-niri and
 // kiro-ohmyniri editions use ~/.config/kiro-niri/ and ~/.config/kiro-ohmyniri/
 // the same way, so all three niri editions coexist).
 //

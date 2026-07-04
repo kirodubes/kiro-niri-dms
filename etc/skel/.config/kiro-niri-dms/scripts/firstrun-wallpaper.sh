@@ -19,8 +19,8 @@
 #   picks in DMS.
 #####################################################################
 
-stamp="$HOME/.config/kiro-niri-mds/.firstrun-wallpaper-done"
-wallpaper="$HOME/.config/kiro-niri-mds/bg/kiro.jpg"
+stamp="$HOME/.config/kiro-niri-dms/.firstrun-wallpaper-done"
+wallpaper="$HOME/.config/kiro-niri-dms/bg/kiro.jpg"
 
 [ -e "$stamp" ] && exit 0
 [ -f "$wallpaper" ] || exit 0
