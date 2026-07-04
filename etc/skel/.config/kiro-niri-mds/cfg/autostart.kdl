@@ -1,0 +1,30 @@
+// ────────────── Startup Applications ──────────────
+// niri does not process /etc/xdg/autostart, so everything starts here.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-at-startup
+
+// niri is Smithay-based, not wlroots — unlike Hyprland/sway/wayfire/river/labwc/mango it has
+// no built-in XWayland integration. xwayland-satellite bridges any X11-only app (including
+// Calamares) onto niri's native Wayland socket at :0. Permanent, not installer-only — keep
+// running for the life of the session, same as xorg-xwayland on the wlroots editions.
+spawn-sh-at-startup "xwayland-satellite :0"
+
+// The whole desktop: DankMaterialShell (bar, launcher, lock, notifications,
+// wallpaper, control center, session menu, polkit agent). `dms run` is DMS's
+// own launcher — it starts the Quickshell shell and its backend services.
+spawn-sh-at-startup "dms run"
+
+// First-login only: point DMS's wallpaper at the shipped Kiro wallpaper so the
+// desktop is Kiro-branded out of the box (DMS then derives its matugen palette
+// from it). Self-guards on a stamp file, so it is a no-op on every later login
+// and never fights a wallpaper the user later picks. Runs in the background so
+// it can poll for DMS's IPC to come up without blocking the rest of startup.
+spawn-sh-at-startup "~/.config/kiro-niri-mds/scripts/firstrun-wallpaper.sh"
+
+// Create the XDG user dirs (Documents, Music, Pictures, …) on first login —
+// niri doesn't run the xdg-user-dirs autostart, so do it explicitly. Idempotent.
+spawn-at-startup "xdg-user-dirs-update"
+
+// Live ISO only: auto-launch the Calamares installer. Gated on the archiso
+// boot mount so it never fires on an installed system; kiro_final strips this
+// line on install.
+spawn-sh-at-startup "[ -d /run/archiso/bootmnt ] && calamares_polkit -d -style kvantum"

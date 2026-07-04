@@ -1,0 +1,35 @@
+// ════════════════════════════════════════════════════════════════════════
+// Kiro niri (DankMaterialShell) baseline config  (config.kdl)
+// ════════════════════════════════════════════════════════════════════════
+// Target: niri (scrollable-tiling Wayland compositor). Config format: KDL.
+// Lives at: ~/.config/kiro-niri-mds/config.kdl  (niri is pointed here by the
+// kiro-niri-mds-session wrapper via NIRI_CONFIG; the sibling kiro-niri and
+// kiro-ohmyniri editions use ~/.config/kiro-niri/ and ~/.config/kiro-ohmyniri/
+// the same way, so all three niri editions coexist).
+//
+// Desktop shell: DankMaterialShell (DMS) — a Quickshell + Material 3 shell that
+// provides the bar, launcher (spotlight), lock screen, notifications, wallpaper,
+// control center, session menu and polkit agent. niri is only the compositor;
+// everything else is DMS, driven over `dms ipc call <target> <function>`.
+//
+// Modular: each concern lives in its own cfg/*.kdl file, pulled in below.
+// Carries Kiro's SUPER-based keybind philosophy and app defaults.
+//
+// NOTE: DMS can generate niri colour/blur includes, but it pins them to
+// ~/.config/niri/dms/*.kdl — a path this edition does NOT use (own config
+// folder). So this config ships a static Kiro focus-ring (cfg/layout.kdl) and
+// does NOT `include "./dms/*.kdl"`. DMS still themes GTK apps + its own bar via
+// matugen at runtime; only the niri focus-ring stays fixed.
+//
+// Docs: https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+//       https://danklinux.com/docs/dankmaterialshell
+// ────────────────────────────────────────────────────────────────────────
+
+include "./cfg/animation.kdl"
+include "./cfg/autostart.kdl"
+include "./cfg/keybinds.kdl"
+include "./cfg/input.kdl"
+include "./cfg/display.kdl"
+include "./cfg/layout.kdl"
+include "./cfg/rules.kdl"
+include "./cfg/misc.kdl"

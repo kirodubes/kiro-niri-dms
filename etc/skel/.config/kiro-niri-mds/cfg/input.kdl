@@ -1,0 +1,28 @@
+// ────────────── Input Configuration ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+input {
+    keyboard {
+        xkb {
+            // Belgian + US, matching the other Kiro editions. Add/remove layouts
+            // to taste; grp:alts_toggle switches between them with both Alts.
+            layout "be,us"
+            options "grp:alts_toggle,compose:caps"  // Caps Lock acts as Compose
+        }
+        numlock // Enable numlock on startup
+    }
+
+    touchpad {
+        tap            // tap-to-click
+        natural-scroll // macOS-style scrolling
+        dwt            // disable-while-typing
+    }
+
+    mouse {
+        // Uncomment to disable mouse acceleration:
+        // accel-profile "flat"
+    }
+
+    focus-follows-mouse max-scroll-amount="0%" // focus under pointer, but not while scrolling partly-offscreen windows
+    workspace-auto-back-and-forth              // press the current workspace key again to bounce back
+}

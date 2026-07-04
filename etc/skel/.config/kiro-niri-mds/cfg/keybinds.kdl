@@ -1,0 +1,182 @@
+binds {
+    // ────────────── Keybindings ──────────────
+    // niri docs:     https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+    // DMS IPC:        dms ipc call <target> <function>   (danklinux.com/docs)
+    // Mod = Super.   Every app bind carries a hotkey-overlay-title so niri's
+    // built-in overlay (Mod+Shift+/) is a self-documenting cheat sheet.
+
+    Mod+Shift+Slash                     { show-hotkey-overlay; }
+
+    // ─── Apps & session (Kiro scheme) ───
+    Mod+Return                          hotkey-overlay-title="Terminal: Alacritty" { spawn "alacritty"; }
+    Mod+Shift+Return                    hotkey-overlay-title="File manager: Thunar" { spawn "thunar"; }
+    Mod+E                               hotkey-overlay-title="Code editor: VS Code" { spawn "code"; }
+    Mod+B                               hotkey-overlay-title="Browser: Firefox" { spawn "firefox"; }
+    Mod+V                               hotkey-overlay-title="Volume control: pavucontrol" { spawn "pavucontrol"; }
+    Mod+X                               hotkey-overlay-title="Logout menu: archlinux-logout" { spawn "archlinux-logout"; }
+    Mod+Shift+X                         hotkey-overlay-title="Power menu: kiro-powermenu" { spawn "kiro-powermenu"; }
+    Ctrl+Alt+K                          hotkey-overlay-title="Logout menu: archlinux-logout" { spawn "archlinux-logout"; }
+
+    // ─── DankMaterialShell (bar / launcher / lock / wallpaper / settings) ───
+    Mod+D                               hotkey-overlay-title="App launcher: DMS spotlight" { spawn-sh "dms ipc call spotlight toggle"; }
+    Mod+Space                           hotkey-overlay-title="App launcher: DMS spotlight" { spawn-sh "dms ipc call spotlight toggle"; }
+    Mod+Ctrl+Return                     hotkey-overlay-title="App launcher: DMS spotlight" { spawn-sh "dms ipc call spotlight toggle"; }
+    Mod+S                               hotkey-overlay-title="Control center: DMS" { spawn-sh "dms ipc call control-center toggle"; }
+    Mod+Shift+S                         hotkey-overlay-title="Settings: DMS" { spawn-sh "dms ipc call settings toggle"; }
+    Mod+Ctrl+S                          hotkey-overlay-title="Show keybindings: kiro-keybindings" { spawn "kiro-keybindings"; }
+    Mod+Alt+L                           hotkey-overlay-title="Lock screen: DMS" { spawn-sh "dms ipc call lock lock"; }
+    Mod+Shift+W                         hotkey-overlay-title="Wallpaper browser: DMS" { spawn-sh "dms ipc call dankdash wallpaper"; }
+    Mod+Shift+C                         hotkey-overlay-title="Clipboard history: DMS" { spawn-sh "dms ipc call clipboard toggle"; }
+    Mod+Shift+N                         hotkey-overlay-title="Notification center: DMS" { spawn-sh "dms ipc call notifications toggle"; }
+
+    // ─── CTRL+ALT app launchers (Kiro scheme) ───
+    Ctrl+Alt+A                          hotkey-overlay-title="Alacritty tweak tool" { spawn "alacritty-tweak-tool"; }
+    Ctrl+Alt+B                          hotkey-overlay-title="Brave" { spawn "brave" "--password-store=basic"; }
+    Ctrl+Alt+C                          hotkey-overlay-title="Chromium" { spawn "chromium" "-no-default-browser-check"; }
+    Ctrl+Alt+D                          hotkey-overlay-title="OBS Studio" { spawn "obs"; }
+    Ctrl+Alt+E                          hotkey-overlay-title="ArchLinux Tweak Tool" { spawn "archlinux-tweak-tool"; }
+    Ctrl+Alt+F                          hotkey-overlay-title="Firefox" { spawn "firefox"; }
+    Ctrl+Alt+G                          hotkey-overlay-title="Chromium" { spawn "chromium" "-no-default-browser-check"; }
+    Ctrl+Alt+I                          hotkey-overlay-title="Kiro ISO builder" { spawn "kiro-iso-builder"; }
+    Ctrl+Alt+L                          hotkey-overlay-title="Logout settings" { spawn "archlinux-logout" "--settings"; }
+    Ctrl+Alt+M                          hotkey-overlay-title="USB image writer: mintstick" { spawn "mintstick" "-m" "iso"; }
+    Ctrl+Alt+O                          hotkey-overlay-title="Opera" { spawn "opera"; }
+    Ctrl+Alt+P                          hotkey-overlay-title="Package manager: pamac" { spawn "pamac-manager"; }
+    Ctrl+Alt+Q                          hotkey-overlay-title="Alacritty tweak tool" { spawn "alacritty-tweak-tool"; }
+    Ctrl+Alt+R                          hotkey-overlay-title="Lock screen: DMS" { spawn-sh "dms ipc call lock lock"; }
+    Ctrl+Alt+Return                     hotkey-overlay-title="Terminal: Alacritty" { spawn "alacritty"; }
+    Ctrl+Alt+T                          hotkey-overlay-title="Terminal: Alacritty" { spawn "alacritty"; }
+    Ctrl+Alt+S                          hotkey-overlay-title="Fish tweak tool" { spawn "fish-tweak-tool"; }
+    Ctrl+Alt+U                          hotkey-overlay-title="Volume control: pavucontrol" { spawn "pavucontrol"; }
+    Ctrl+Alt+V                          hotkey-overlay-title="Vivaldi" { spawn "vivaldi-stable"; }
+    Ctrl+Alt+W                          hotkey-overlay-title="Fastfetch tweak tool" { spawn "fastfetch-tweak-tool"; }
+    Ctrl+Alt+Z                          hotkey-overlay-title="Fastfetch tweak tool" { spawn "fastfetch-tweak-tool"; }
+    Ctrl+Alt+End                        hotkey-overlay-title="System monitor: btop" { spawn "alacritty" "--class" "btop" "-e" "btop"; }
+
+    // ─── Function-key app launchers (Kiro scheme) ───
+    Mod+F1                              hotkey-overlay-title="Firefox" { spawn "firefox"; }
+    Mod+F2                              hotkey-overlay-title="Code editor: VS Code" { spawn "code"; }
+    Mod+F3                              hotkey-overlay-title="Inkscape" { spawn "inkscape"; }
+    Mod+F4                              hotkey-overlay-title="GIMP" { spawn "gimp"; }
+    Mod+F5                              hotkey-overlay-title="Meld" { spawn "meld"; }
+    Mod+F6                              hotkey-overlay-title="VLC" { spawn "vlc"; }
+    Mod+F7                              hotkey-overlay-title="VirtualBox" { spawn "virtualbox"; }
+    Mod+F8                              hotkey-overlay-title="File manager: Thunar" { spawn "thunar"; }
+    Mod+F9                              hotkey-overlay-title="Virt-manager" { spawn "virt-manager"; }
+    Mod+F10                             hotkey-overlay-title="Spotify" { spawn "spotify"; }
+    Mod+F11                             hotkey-overlay-title="App launcher: DMS spotlight" { spawn-sh "dms ipc call spotlight toggle"; }
+    Mod+F12                             hotkey-overlay-title="App launcher: DMS spotlight" { spawn-sh "dms ipc call spotlight toggle"; }
+
+    // ─── Media keys (routed through DMS, work while locked) ───
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "dms ipc call audio increment 5"; }
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "dms ipc call audio decrement 5"; }
+    XF86AudioMute                       allow-when-locked=true { spawn-sh "dms ipc call audio mute"; }
+    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "dms ipc call audio micmute"; }
+    XF86AudioNext                       allow-when-locked=true { spawn-sh "dms ipc call mpris next"; }
+    XF86AudioPrev                       allow-when-locked=true { spawn-sh "dms ipc call mpris previous"; }
+    XF86AudioPlay                       allow-when-locked=true { spawn-sh "dms ipc call mpris playPause"; }
+    XF86AudioPause                      allow-when-locked=true { spawn-sh "dms ipc call mpris playPause"; }
+    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "dms ipc call brightness increment 5 ''"; }
+    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "dms ipc call brightness decrement 5 ''"; }
+
+    // ─── Window focus & movement (niri column model) ───
+    Mod+Q                               { close-window; }
+
+    Mod+Left                            { focus-column-left; }
+    Mod+H                               { focus-column-left; }
+    Mod+Right                           { focus-column-right; }
+    Mod+L                               { focus-column-right; }
+    Mod+Up                              { focus-window-up; }
+    Mod+K                               { focus-window-up; }
+    Mod+Down                            { focus-window-down; }
+    Mod+J                               { focus-window-down; }
+
+    Mod+Ctrl+Left                       { move-column-left; }
+    Mod+Ctrl+H                          { move-column-left; }
+    Mod+Ctrl+Right                      { move-column-right; }
+    Mod+Ctrl+L                          { move-column-right; }
+    Mod+Ctrl+Up                         { move-window-up; }
+    Mod+Ctrl+K                          { move-window-up; }
+    Mod+Ctrl+Down                       { move-window-down; }
+    Mod+Ctrl+J                          { move-window-down; }
+
+    Mod+Home                            { focus-column-first; }
+    Mod+End                             { focus-column-last; }
+    Mod+Ctrl+Home                       { move-column-to-first; }
+    Mod+Ctrl+End                        { move-column-to-last; }
+
+    Mod+Shift+Left                      { focus-monitor-left; }
+    Mod+Shift+Right                     { focus-monitor-right; }
+    Mod+Shift+Up                        { focus-monitor-up; }
+    Mod+Shift+Down                      { focus-monitor-down; }
+
+    Mod+Shift+Ctrl+Left                 { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Right                { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+Up                   { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Down                 { move-column-to-monitor-down; }
+
+    Mod+Shift+V                         { switch-focus-between-floating-and-tiling; }
+    Mod+BracketLeft                     { consume-or-expel-window-left; }
+    Mod+BracketRight                    { consume-or-expel-window-right; }
+    Mod+Comma                           { consume-window-into-column; }
+    Mod+Period                          { expel-window-from-column; }
+
+    Mod+R                               { switch-preset-column-width; }
+    Mod+Shift+R                         { switch-preset-window-height; }
+    Mod+Ctrl+R                          { reset-window-height; }
+
+    // ─── Workspaces ───
+    Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    Mod+Tab                             { focus-workspace-previous; }
+
+    // ─── Layout & modes ───
+    Mod+Ctrl+F                          { expand-column-to-available-width; }
+    Mod+C                               { center-column; }
+    Mod+Ctrl+C                          { center-visible-columns; }
+    Mod+Minus                           { set-column-width "-10%"; }
+    Mod+Equal                           { set-column-width "+10%"; }
+    Mod+Shift+Minus                     { set-window-height "-10%"; }
+    Mod+Shift+Equal                     { set-window-height "+10%"; }
+
+    Mod+T                               { toggle-window-floating; }
+    Mod+F                               { maximize-column; }
+    Mod+Shift+F                         { fullscreen-window; }
+    Mod+W                               { toggle-column-tabbed-display; }
+    Mod+M                               { maximize-window-to-edges; }
+    Mod+O                               repeat=false { toggle-overview; }
+
+    // ─── Screenshots (niri native) ───
+    Print                               { screenshot; }
+    Ctrl+Print                          { screenshot-screen; }
+    Alt+Print                           { screenshot-window; }
+
+    // ─── Emergency / power ───
+    // Escape hatch when a fullscreen app grabs the keyboard.
+    Mod+Escape                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+P                         { power-off-monitors; }
+    Ctrl+Alt+Delete                     { quit; }
+}

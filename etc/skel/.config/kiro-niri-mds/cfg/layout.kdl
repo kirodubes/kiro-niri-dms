@@ -1,0 +1,35 @@
+// ────────────── Layout ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
+layout {
+    gaps 8
+    center-focused-column "never"
+
+    // Transparent so DankMaterialShell can draw the wallpaper into niri's
+    // backdrop (see the layer-rule in cfg/rules.kdl).
+    background-color "transparent"
+
+    // Static Kiro focus-ring, using DMS's Material 3 default accent so the
+    // ring harmonises with the DMS bar. This is deliberately NOT driven by
+    // matugen: DMS pins its generated niri colour include to ~/.config/niri/dms/,
+    // a path this edition doesn't use — so the ring stays fixed while DMS themes
+    // its own bar + GTK apps from the wallpaper at runtime.
+    focus-ring {
+        width 2
+        active-color "#d0bcff"
+        inactive-color "#948f99"
+    }
+    border {
+        off
+    }
+
+    // Cycle these widths with Mod+R / Mod+Shift+R.
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    struts {}
+}

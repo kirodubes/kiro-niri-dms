@@ -1,0 +1,11 @@
+// ────────────── Output Configuration ──────────────
+// Run `niri msg outputs` to get your display names, then remove the leading
+// "/-" (which comments a node out) and edit before it takes effect.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+/- output "DP-1" {
+    mode "2560x1440@59.951" // resolution + refresh rate
+    scale 1                 // 1 for 1080p/1440p; 2 for HiDPI; 1.6 for fractional 4K
+    // transform "90"       // rotate a portrait/secondary panel
+    // position x=0 y=0
+}

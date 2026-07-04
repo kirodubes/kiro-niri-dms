@@ -1,0 +1,35 @@
+// ────────────── Window & Layer Rules ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+
+// Rounded corners on every window.
+window-rule {
+    geometry-corner-radius 20
+    clip-to-geometry true
+}
+
+// Subtle transparency on the terminal (active/inactive).
+window-rule {
+    match app-id="Alacritty"
+    opacity 0.95
+}
+
+// Steam: float its sub-windows, keep the main window tiled.
+window-rule {
+    match app-id="steam"
+    exclude title=r#"^[Ss]team$"#
+    open-floating true
+}
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
+// DankMaterialShell paints its wallpaper on a Quickshell layer surface; place it
+// in niri's backdrop so it shows through the overview and behind transparent
+// windows. (This is DMS's own blessed niri rule — its Quickshell layer namespace
+// is "quickshell", not noctalia's.)
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}

@@ -1,0 +1,120 @@
+###############################################################################
+#  KEYBINDINGS — niri (DankMaterialShell)
+#  Source: etc/skel/.config/kiro-niri-mds/cfg/keybinds.kdl
+#  Generated: 2026.07.04 — DO NOT EDIT BY HAND
+#  Shell: DankMaterialShell (bar / launcher / lock / wallpaper / settings)
+###############################################################################
+
+── 1. Applications & Launchers ────────────────────────────────────────────────
+  super + Return          Terminal
+  super + shift + Return  File manager
+  super + E               Code editor
+  super + B               Browser
+  super + V               Volume control
+  super + D               Launch apps (DMS spotlight)
+  super + Space           Launch apps (DMS spotlight)
+  super + ctrl + Return   Launch apps (DMS spotlight)
+  super + S               Control center (DMS)
+  super + shift + S       Settings (DMS)
+  super + shift + W       Wallpaper browser (DMS)
+  super + shift + C       Clipboard history (DMS)
+  super + shift + N       Notification center (DMS)
+  ctrl + alt + A          Alacritty tweak tool
+  ctrl + alt + B          Brave
+  ctrl + alt + C          Chromium
+  ctrl + alt + D          OBS Studio
+  ctrl + alt + E          ArchLinux tweak tool
+  ctrl + alt + F          Firefox
+  ctrl + alt + G          Chromium
+  ctrl + alt + I          Kiro ISO builder
+  ctrl + alt + M          USB image writer
+  ctrl + alt + O          Opera
+  ctrl + alt + P          Package manager
+  ctrl + alt + Q          Alacritty tweak tool
+  ctrl + alt + Return     Terminal
+  ctrl + alt + T          Terminal
+  ctrl + alt + S          Fish tweak tool
+  ctrl + alt + U          Volume control
+  ctrl + alt + V          Vivaldi
+  ctrl + alt + W          Fastfetch tweak tool
+  ctrl + alt + Z          Fastfetch tweak tool
+  ctrl + alt + End        System monitor
+  super + F1              Firefox
+  super + F2              Code editor
+  super + F3              Inkscape
+  super + F4              GIMP
+  super + F5              Meld
+  super + F6              VLC
+  super + F7              VirtualBox
+  super + F8              File manager
+  super + F9              Virt-manager
+  super + F10             Spotify
+  super + F11             Launch apps (DMS spotlight)
+  super + F12             Launch apps (DMS spotlight)
+
+── 2. Window Management ───────────────────────────────────────────────────────
+  super + Q               Close window
+  super + left / H        Focus column left
+  super + right / L       Focus column right
+  super + up / K          Focus window up
+  super + down / J        Focus window down
+  super + ctrl + arrows   Move column / window
+  super + Home            Focus first column
+  super + End             Focus last column
+  super + shift + arrows  Focus monitor
+  super + shift + ctrl    Move column to monitor
+  super + shift + V       Floating <-> tiling focus
+  super + [ / ]           Consume / expel window
+  super + comma           Consume window into column
+  super + period          Expel window from column
+
+── 3. Workspaces / Tags / Groups ──────────────────────────────────────────────
+  super + 1..9            Focus workspace 1..9
+  super + ctrl + 1..9     Move column to workspace 1..9
+  super + scroll up/down  Focus workspace up/down
+  super + ctrl + scroll   Move column to workspace up/down
+  super + Tab             Previous workspace
+
+── 4. Layout & Tiling ─────────────────────────────────────────────────────────
+  super + R               Cycle column width
+  super + shift + R       Cycle window height
+  super + ctrl + R        Reset window height
+  super + ctrl + F        Expand column to available width
+  super + C               Center column
+  super + ctrl + C        Center visible columns
+  super + minus / equal   Shrink / grow column width
+  super + shift + -/=     Shrink / grow window height
+  super + T               Toggle floating
+  super + F               Maximize column
+  super + shift + F       Fullscreen
+  super + W               Tabbed column display
+  super + M               Maximize to edges
+  super + O               Overview
+
+── 6. Multimedia & Hardware ───────────────────────────────────────────────────
+  XF86AudioRaiseVolume    Volume up
+  XF86AudioLowerVolume    Volume down
+  XF86AudioMute           Mute
+  XF86AudioMicMute        Mute microphone
+  XF86AudioPlay / Pause   Play / pause
+  XF86AudioNext           Next track
+  XF86AudioPrev           Previous track
+  XF86MonBrightnessUp     Brightness up
+  XF86MonBrightnessDown   Brightness down
+
+── 7. Screenshots ─────────────────────────────────────────────────────────────
+  Print                   Screenshot region
+  ctrl + Print            Screenshot screen
+  alt + Print             Screenshot window
+
+── 8. System & Session ────────────────────────────────────────────────────────
+  super + X               Logout menu
+  super + shift + X       Power menu
+  ctrl + alt + K          Logout menu
+  ctrl + alt + L          Logout settings
+  super + alt + L         Lock screen (DMS)
+  ctrl + alt + R          Lock screen (DMS)
+  super + ctrl + S        Show keybindings
+  super + Escape          Toggle shortcut inhibit
+  super + shift + P       Power off monitors
+  ctrl + alt + Delete     Quit niri

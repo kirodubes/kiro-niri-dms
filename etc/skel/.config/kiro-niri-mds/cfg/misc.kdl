@@ -1,0 +1,34 @@
+// ────────────── Miscellaneous ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous
+
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
+
+// Session environment. niri exports these to spawned apps and the shell.
+environment {
+    DISPLAY ":0"
+    GDK_BACKEND "wayland,x11"
+    MOZ_ENABLE_WAYLAND "1"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "gtk3"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_SESSION_TYPE "wayland"
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
+
+// DankMaterialShell needs this for its notification actions / window activation
+// to work (it is in DMS's own blessed niri config too).
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+// Don't pop the hotkey overlay on every login (show it on demand with Mod+Shift+/).
+hotkey-overlay {
+    skip-at-startup
+}
