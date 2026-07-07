@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026.07.07
+
+### Keyboard: US default + normalized Alt+Shift toggle
+
+**What Changed**
+- Flipped the layout order `be,us` → **`us,be`**: US QWERTY is now the default at login, Belgian AZERTY the secondary layout.
+- Normalized the layout-switch option from `grp:alts_toggle` (press both Alts) to **`grp:alt_shift_toggle`** (Alt+Shift), matching the rest of the KIROTUX line. Options now `grp:alt_shift_toggle,compose:caps`.
+
+**Technical Details**
+- `grp:alt_shift_toggle` matches the CachyOS Calamares reference (`keyboard/Config.cpp` defaults the group switcher to it when a second layout exists). `compose:caps` (Caps = Compose) unchanged. `layout` / `options` in `cfg/input.kdl`.
+
+**Files Modified**
+- `etc/skel/.config/kiro-niri-dms/cfg/input.kdl`
+
 ## 2026.07.04
 
 ### What Changed

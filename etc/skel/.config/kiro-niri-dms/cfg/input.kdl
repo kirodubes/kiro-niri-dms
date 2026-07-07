@@ -4,10 +4,10 @@
 input {
     keyboard {
         xkb {
-            // Belgian + US, matching the other Kiro editions. Add/remove layouts
-            // to taste; grp:alts_toggle switches between them with both Alts.
-            layout "be,us"
-            options "grp:alts_toggle,compose:caps"  // Caps Lock acts as Compose
+            // US + Belgian, matching the other Kiro editions. Add/remove layouts
+            // to taste; grp:alt_shift_toggle switches between them with Alt+Shift.
+            layout "us,be"
+            options "grp:alt_shift_toggle,compose:caps"  // Caps Lock acts as Compose
         }
         numlock // Enable numlock on startup
     }
