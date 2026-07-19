@@ -1,4 +1,4 @@
-# kiro-niri-mds — Claude project instructions
+# kiro-niri-dms — Claude project instructions
 
 ## Overview
 Config package for the **Kiro niri + DankMaterialShell edition** — the Material-3 member of the
@@ -9,9 +9,9 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
 
 ## Edition spec (the WM-variable matrix)
 - **Compositor:** niri (scrollable-tiling, Smithay-based — *not* wlroots).
-- **Config language:** KDL. `etc/skel/.config/kiro-niri-mds/config.kdl` `include`s `cfg/*.kdl`
+- **Config language:** KDL. `etc/skel/.config/kiro-niri-dms/config.kdl` `include`s `cfg/*.kdl`
   (`animation, autostart, keybinds, input, display, layout, rules, misc`). Edit the `cfg/` file,
-  not a monolith. niri is pointed at this folder by the `kiro-niri-mds-session` wrapper via
+  not a monolith. niri is pointed at this folder by the `kiro-niri-dms-session` wrapper via
   `NIRI_CONFIG`.
 - **Desktop shell:** **DankMaterialShell (DMS)** — a Quickshell + Material 3 shell (`dms-shell-niri`
   from Arch `extra`). Provides bar, launcher (spotlight), lock, notifications, wallpaper, control
@@ -62,15 +62,15 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
 ## Sibling editions
 - **`kiro-niri`** (noctalia-shell) and **`kiro-ohmyniri`** (waybar/kiro-hyprland look) — same
   compositor, different shells. All three ship **their own** config folder
-  (`~/.config/kiro-niri-mds/` vs `kiro-niri/` vs `kiro-ohmyniri/`), session `.desktop`, wrapper and
+  (`~/.config/kiro-niri-dms/` vs `kiro-niri/` vs `kiro-ohmyniri/`), session `.desktop`, wrapper and
   hook — **no shared files, no conflicts** — so all coexist and are picked per-login.
 - The remove-hook un-hide of upstream "Niri" is guarded to only fire when neither sibling is still
   installed. **Known follow-up:** the siblings' own `.install` unhide checks don't yet know about
-  `kiro-niri-mds.desktop`; patch them when they're next touched (would need rebuilding those pkgs).
+  `kiro-niri-dms.desktop`; patch them when they're next touched (would need rebuilding those pkgs).
 
 ## Build / delivery
-- Source-of-truth for the config; delivered as the `kiro-niri-mds` package via
-  `../KIROTUX-PKG-BUILD/kiro-niri-mds/build.sh` (public recipe → `~/EDU/nemesis_repo/`). After
-  editing here: rebuild the package (recipe `build.sh` or `flow-kiro-niri-mds`), then the ISO to
+- Source-of-truth for the config; delivered as the `kiro-niri-dms` package via
+  `../KIROTUX-PKG-BUILD/kiro-niri-dms/build.sh` (public recipe → `~/EDU/nemesis_repo/`). After
+  editing here: rebuild the package (recipe `build.sh` or `flow-kiro-niri-dms`), then the ISO to
   test a fresh install.
 - See [../CLAUDE.md](../CLAUDE.md) for the full KIROTUX delivery architecture.

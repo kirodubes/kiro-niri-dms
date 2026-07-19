@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026.07.09
+
+### Fix `mds` → `dms` typo throughout the docs
+
+**What Changed**
+- The package/edition is **kiro-niri-dms** (niri + **D**ank **M**aterial **S**hell →
+  DMS), and every shipped file is named `dms` — but README, CLAUDE.md and the
+  earlier CHANGELOG entries had the letters transposed as `mds` (title, config
+  path `~/.config/kiro-niri-dms/`, session `kiro-niri-dms.desktop` / "Kiro Niri
+  DMS", wrapper `kiro-niri-dms-session`, golden copy, recipe path, flow script).
+  Corrected all doc references to `dms`; the actual files were already correct.
+
+**Files Modified**
+- `README.md`, `CLAUDE.md`, `CHANGELOG.md`
+
 ## 2026.07.07
 
 ### Keyboard: US default + normalized Alt+Shift toggle
@@ -17,7 +32,7 @@
 ## 2026.07.04
 
 ### What Changed
-- **Initial config package.** `kiro-niri-mds` — the niri + **DankMaterialShell (DMS)** edition of
+- **Initial config package.** `kiro-niri-dms` — the niri + **DankMaterialShell (DMS)** edition of
   the Kiro Wayland line. Sibling of `kiro-niri` (noctalia-shell) and `kiro-ohmyniri`
   (waybar/kiro-hyprland look): same niri compositor, DMS as the desktop shell instead. Forked from
   `kiro-niri` and re-pointed at DMS.
@@ -26,8 +41,8 @@
   wallpaper / clipboard / notifications / volume / brightness / media are all routed through
   `dms ipc call <target> <function>` (see `cfg/keybinds.kdl`).
 - **Own config folder + own session entry**, matching the sibling pattern: ships
-  `kiro-niri-mds.desktop` ("Kiro Niri MDS") → a `kiro-niri-mds-session` wrapper that points niri
-  at `~/.config/kiro-niri-mds/config.kdl` via `NIRI_CONFIG`. All three niri editions coexist and
+  `kiro-niri-dms.desktop` ("Kiro Niri DMS") → a `kiro-niri-dms-session` wrapper that points niri
+  at `~/.config/kiro-niri-dms/config.kdl` via `NIRI_CONFIG`. All three niri editions coexist and
   are switchable per-login. The upstream plain "Niri" greeter entry is hidden with a
   `NoDisplay=true` pacman hook; the remove-hook un-hide is guarded to only fire when neither
   sibling (`kiro-niri`, `kiro-ohmyniri`) is still installed.
@@ -51,6 +66,6 @@
   file risks breaking its schema; the wallpaper is set over IPC by the first-run script instead.
 
 ### Files Modified
-- New source repo `kiro-niri-mds/` (config tree, session wrapper, hide-upstream hook + helper,
+- New source repo `kiro-niri-dms/` (config tree, session wrapper, hide-upstream hook + helper,
   session desktop entry, README/CHANGELOG/CLAUDE) and recipe
-  `KIROTUX-PKG-BUILD/kiro-niri-mds/` (PKGBUILD + build.sh + kiro-niri-mds.install).
+  `KIROTUX-PKG-BUILD/kiro-niri-dms/` (PKGBUILD + build.sh + kiro-niri-dms.install).
