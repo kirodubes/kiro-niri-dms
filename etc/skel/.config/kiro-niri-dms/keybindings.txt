@@ -1,7 +1,8 @@
 ###############################################################################
 #  KEYBINDINGS — niri (DankMaterialShell)
 #  Source: etc/skel/.config/kiro-niri-dms/cfg/keybinds.kdl
-#  Generated: 2026.07.04 — DO NOT EDIT BY HAND
+#  Generated: 2026.07.04
+#  Reference for the default bindings. Changed yours? Edit this file to match.
 #  Shell: DankMaterialShell (bar / launcher / lock / wallpaper / settings)
 ###############################################################################
 
