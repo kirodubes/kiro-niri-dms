@@ -13,7 +13,7 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
   (`animation, autostart, keybinds, input, display, layout, rules, misc`). Edit the `cfg/` file,
   not a monolith. niri is pointed at this folder by the `kiro-niri-dms-session` wrapper via
   `NIRI_CONFIG`.
-- **Desktop shell:** **DankMaterialShell (DMS)** — a Quickshell + Material 3 shell (`dms-shell-niri`
+- **Desktop shell:** **DankMaterialShell (DMS)** — a Quickshell + Material 3 shell (`dms-shell`
   from Arch `extra`). Provides bar, launcher (spotlight), lock, notifications, wallpaper, control
   center, session menu, polkit agent. Driven over `dms ipc call <target> <function>`
   (docs: danklinux.com/docs/dankmaterialshell; local `IPC.md` in the upstream clone). Started with
@@ -25,7 +25,7 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
   niri's focus-ring is a **static** Kiro colour (DMS Material default `#d0bcff`), NOT matugen-driven
   — see gotcha below. Base GTK look + cursor (dark adw-gtk3, Bibata-Modern-Ice) shipped via
   `/etc/dconf/`, owned by `kiro-wayland-dotfiles` (this edition is a partial consumer — dconf only).
-- **Dependency note:** `dms-shell-niri` (+ `dms-shell`, `quickshell`, `dgop`, `accountsservice`) all
+- **Dependency note:** `dms-shell` (+ `quickshell`, `dgop`, `accountsservice`) all
   come from **Arch `extra`** — nothing repackaged by Kiro. `matugen`, `cava`, `kimageformats` added.
   `power-profiles-daemon` is an **optdepend** (DMS `powerprofile` IPC); `tuned-ppd` rejected (it
   conflicts with `power-profiles-daemon`).

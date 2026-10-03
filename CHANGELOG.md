@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026.10.03
+
+### What Changed
+- Docs now name `dms-shell` as the DMS dependency instead of `dms-shell-niri`. Arch `extra` folded the split package back
+  into `dms-shell` (1.6.2-2) and no longer ships it; the PKGBUILD in `KIROTUX-PKG-BUILD/kiro-niri-dms` was fixed to match.
+
+### Technical Details
+- `extra/dms-shell` lists `dms-shell-niri` in `replaces=` but not in `provides=`, so pacman swaps it out on upgrade and any
+  `depends` on the old name becomes unsatisfiable.
+
+### Files Modified
+- `README.md`
+- `CLAUDE.md`
+
 ## 2026.09.27
 
 ### What Changed

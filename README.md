@@ -32,7 +32,7 @@ picked per-login.
 sudo pacman -S kiro-niri-dms
 ```
 
-`kiro-niri-dms` depends on `niri` + `dms-shell-niri` (both in Arch `extra`) plus the usual
+`kiro-niri-dms` depends on `niri` + `dms-shell` (both in Arch `extra`) plus the usual
 Wayland helpers. On a fresh login niri starts DMS (`dms run`), which paints the bar and
 wallpaper and derives its Material palette from it. Press **Super + Ctrl + S** for the searchable
 keybindings cheat sheet, or **Super + Shift + /** for niri's built-in hotkey overlay.
