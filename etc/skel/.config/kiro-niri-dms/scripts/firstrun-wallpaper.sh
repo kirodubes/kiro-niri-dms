@@ -25,6 +25,14 @@ wallpaper="$HOME/.config/kiro-niri-dms/bg/kiro.jpg"
 [ -e "$stamp" ] && exit 0
 [ -f "$wallpaper" ] || exit 0
 
+# `dms ipc` unpacks the embedded UI itself when it isn't there yet; calling it while `dms run`
+# is still unpacking at first login makes `dms run` exit (FATAL extract embedded UI). Wait for qs.
+n=0
+until pgrep -u "$(id -u)" -x qs >/dev/null; do
+    n=$((n + 1)); [ "$n" -ge 120 ] && exit 0
+    sleep 0.5
+done
+
 # Poll for DMS IPC to come up (up to ~30s), then set the wallpaper.
 i=0
 while [ "$i" -lt 60 ]; do

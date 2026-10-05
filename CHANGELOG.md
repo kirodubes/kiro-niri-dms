@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026.10.05
+
+### What Changed
+- Fixed a possible missing bar at first login, found on kiro-hyprland-dms (same script, same race). `dms run` can
+  exit at once with `FATAL extract embedded UI: chtimes .../danklinux-shell/.extract-*/...: no such file or
+  directory`. The first-run wallpaper script starts together with `dms run` and calls `dms ipc` straight away, and
+  `dms ipc` unpacks the embedded UI itself when it isn't there yet. Two unpacks into
+  `$XDG_RUNTIME_DIR/danklinux-shell/` at once make `dms run` fail. That leaves no bar and no wallpaper. The script
+  now waits until DMS is up before its first `dms ipc` call.
+
+### Technical Details
+- `firstrun-wallpaper.sh` polls `pgrep -u "$(id -u)" -x qs` every 0.5s, up to 60s, before its loop. `qs` only
+  starts after `dms run` has finished unpacking. If `qs` never appears, the script exits without writing the stamp,
+  so it tries again at the next login.
+- Not reproduced on niri itself; the cause was proven and the fix tested on kiro-hyprland-dms (2026.10.05).
+
+### Files Modified
+- `etc/skel/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh`
+
 ## 2026.10.03
 
 ### What Changed
