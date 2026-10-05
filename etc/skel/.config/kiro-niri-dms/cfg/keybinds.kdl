@@ -79,6 +79,17 @@ binds {
     XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "dms ipc call brightness increment 5 ''"; }
     XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "dms ipc call brightness decrement 5 ''"; }
 
+    // ─── Wallpaper (Variety) — kiro-variety-config hands each wallpaper to DMS (dms ipc) ───
+    Alt+N                               hotkey-overlay-title="Next wallpaper: Variety" { spawn "variety" "--next"; }
+    Alt+Right                           hotkey-overlay-title="Next wallpaper: Variety" { spawn "variety" "--next"; }
+    Alt+P                               hotkey-overlay-title="Previous wallpaper: Variety" { spawn "variety" "--previous"; }
+    Alt+Left                            hotkey-overlay-title="Previous wallpaper: Variety" { spawn "variety" "--previous"; }
+    Alt+T                               hotkey-overlay-title="Trash wallpaper: Variety" { spawn "variety" "--trash"; }
+    Alt+F                               hotkey-overlay-title="Favorite wallpaper: Variety" { spawn "variety" "--favorite"; }
+    Alt+Up                              hotkey-overlay-title="Pause wallpaper: Variety" { spawn "variety" "--pause"; }
+    Alt+Down                            hotkey-overlay-title="Resume wallpaper: Variety" { spawn "variety" "--resume"; }
+    Alt+W                               hotkey-overlay-title="Wallpaper selector: Variety" { spawn "variety" "--selector"; }
+
     // ─── Window focus & movement (niri column model) ───
     Mod+Q                               { close-window; }
 

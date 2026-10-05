@@ -9,15 +9,23 @@
   `dms ipc` unpacks the embedded UI itself when it isn't there yet. Two unpacks into
   `$XDG_RUNTIME_DIR/danklinux-shell/` at once make `dms run` fail. That leaves no bar and no wallpaper. The script
   now waits until DMS is up before its first `dms ipc` call.
+- Added Variety wallpaper keybindings (same scheme as the Hyprland editions): Alt+N / Alt+Right next, Alt+P /
+  Alt+Left previous, Alt+T trash, Alt+F favorite, Alt+Up pause, Alt+Down resume, Alt+W selector. Variety's
+  wallpapers now reach DMS (kiro-variety-config, same day).
 
 ### Technical Details
 - `firstrun-wallpaper.sh` polls `pgrep -u "$(id -u)" -x qs` every 0.5s, up to 60s, before its loop. `qs` only
   starts after `dms run` has finished unpacking. If `qs` never appears, the script exits without writing the stamp,
   so it tries again at the next login.
 - Not reproduced on niri itself; the cause was proven and the fix tested on kiro-hyprland-dms (2026.10.05).
+- `cfg/keybinds.kdl` block after the media keys, each with a `hotkey-overlay-title`; the only existing plain-Alt
+  bind is Alt+Print, so nothing was taken. `keybindings.txt` gets section 6b. Not run on niri yet: no niri install
+  was available to validate the KDL; it follows the file's existing `spawn` syntax.
 
 ### Files Modified
 - `etc/skel/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh`
+- `etc/skel/.config/kiro-niri-dms/cfg/keybinds.kdl`
+- `etc/skel/.config/kiro-niri-dms/keybindings.txt`
 
 ## 2026.10.03
 
