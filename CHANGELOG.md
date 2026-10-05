@@ -12,6 +12,9 @@
 - Added Variety wallpaper keybindings (same scheme as the Hyprland editions): Alt+N / Alt+Right next, Alt+P /
   Alt+Left previous, Alt+T trash, Alt+F favorite, Alt+Up pause, Alt+Down resume, Alt+W selector. Variety's
   wallpapers now reach DMS (kiro-variety-config, same day).
+- **`QT_STYLE_OVERRIDE "kvantum"` moved into the `environment { }` block** of `cfg/misc.kdl`. The Wayland ISOs keep only
+  `EDITOR` in `/etc/environment` from now on (`GTK_THEME` and `BROWSER` there caused transparent GTK 4 windows and a
+  browser default that couldn't be changed); the Qt variables belong to the session.
 
 ### Technical Details
 - `firstrun-wallpaper.sh` polls `pgrep -u "$(id -u)" -x qs` every 0.5s, up to 60s, before its loop. `qs` only
@@ -21,11 +24,13 @@
 - `cfg/keybinds.kdl` block after the media keys, each with a `hotkey-overlay-title`; the only existing plain-Alt
   bind is Alt+Print, so nothing was taken. `keybindings.txt` gets section 6b. Not run on niri yet: no niri install
   was available to validate the KDL; it follows the file's existing `spawn` syntax.
+- Same `KEY "value"` form as the existing lines; not validated with `niri validate` (no niri install at hand).
 
 ### Files Modified
 - `etc/skel/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh`
 - `etc/skel/.config/kiro-niri-dms/cfg/keybinds.kdl`
 - `etc/skel/.config/kiro-niri-dms/keybindings.txt`
+- `etc/skel/.config/kiro-niri-dms/cfg/misc.kdl`
 
 ## 2026.10.03
 
