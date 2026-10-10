@@ -16,6 +16,9 @@
     Super+E and Super+F2 open Sublime Text (`subl`) instead of VS Code. New Ctrl+Alt+H opens Kirotux Niri
     Premium when it's installed, else a notification with a **Get KiroTux** button.
 - Existing installs keep their `~/.config` copy; these reach new installs and users who copy the new defaults.
+- **`config.kdl` ends with `include optional=true "kirotux-appearance.kdl"`**: Kirotux Niri Premium writes the
+  user's changes there and niri reloads them. Optional, so it's harmless without the app. Needs niri 26.04+;
+  the recipe now depends on `niri>=26.04`.
 - Source repo moved from `~/KIROTUX/kiro-niri-dms` to `~/KIRO/kiro-niri-dms` and its recipe to `~/KIRO-PKG-BUILD-APPS/kiro-niri-dms`: ATT installs it from nemesis_repo, so it is a Kiro package, not KiroTux-only. Paths and links in the docs follow. The package itself is unchanged.
 - **The installer's Next button can be clicked again:** Calamares now opens as a floating 1024x900 window. In a QEMU VM the Next button ignored mouse clicks; floating the window fixed it.
 
@@ -30,6 +33,7 @@
 - `CLAUDE.md`, `CHANGELOG.md`
 - `etc/skel/.config/kiro-niri-dms/cfg/autostart.kdl`, `cfg/keybinds.kdl`, `keybindings.txt`
 - `etc/skel/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh`, `scripts/keyboard-from-installer.sh` (new)
+- `etc/skel/.config/kiro-niri-dms/config.kdl`
 - `etc/skel/.config/kiro-niri-dms/cfg/rules.kdl`
 
 ## 2026.10.05

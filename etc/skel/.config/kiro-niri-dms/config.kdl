@@ -33,3 +33,9 @@ include "./cfg/display.kdl"
 include "./cfg/layout.kdl"
 include "./cfg/rules.kdl"
 include "./cfg/misc.kdl"
+
+// ── Kirotux Niri Premium (keep this line LAST) ──────────────────────────────────
+// The app writes your changes to kirotux-appearance.kdl in this folder; it only holds the values you
+// changed there. No file = this edition's own look. Put your own changes ABOVE this line.
+// optional=true (niri 26.04+): without the app, or before its first save, the missing file is fine.
+include optional=true "kirotux-appearance.kdl"
