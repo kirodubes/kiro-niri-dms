@@ -3,12 +3,12 @@
 ## 2026.10.10
 
 ### What Changed
-- **The installer keyboard layout survives `skell`.** On picard the layout went back to US after `skell` (kiro-skell)
+- **The installer keyboard layout survives `skell`.** On the test box the layout went back to US after `skell` (kiro-skell)
   copied /etc/skel over `~/.config` and restored the shipped `layout "us,be"`: the first-login script's stamp file
   survived the copy, so it never ran again. The script now has no stamp: at every login it replaces the untouched
   shipped line with the installer's layout, and leaves any line the user changed alone (to keep us,be on purpose,
   add a comment to the line: `layout "us,be" // mine`). An old stamp is removed. Tested: skell reset, de+variant,
-  live ISO, user-kept us,be, user-chosen fr (each run twice); on picard it switched niri to Belgian at once and
+  live ISO, user-kept us,be, user-chosen fr (each run twice); on the test box it switched niri to Belgian at once and
   `niri validate` passes.
 - **Fixes carried over from kiro-hyprland-dms for the KiroTux Niri DMS ISO:**
   - **Qt apps follow the dark theme:** `kiro-kvantum-default` runs at session start (KvGnomeDark, unless the user

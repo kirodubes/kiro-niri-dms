@@ -15,7 +15,7 @@
 #   picked e.g. Belgian still typed US. It only replaces the untouched shipped line, so a layout the user
 #   set is never overwritten. There is deliberately no "done" stamp: `skell` (kiro-skell) copies
 #   /etc/skel back over ~/.config and restores the shipped line, and a stamp that survives that copy
-#   made the installer layout disappear for good (picard, 2026-10-10). To keep us,be on purpose, change
+#   made the installer layout disappear for good (test box, 2026-10-10). To keep us,be on purpose, change
 #   the line in any way, e.g. add a comment: layout "us,be" // mine
 #   No-op on the live ISO (no XKBLAYOUT there).
 #####################################################################
