@@ -2,7 +2,7 @@
 
 ## Overview
 Config package for the **Kiro niri + DankMaterialShell edition** — the Material-3 member of the
-KIROTUX Wayland line, sibling to [kiro-niri](../kiro-niri/CLAUDE.md) (noctalia-shell) and
+KIROTUX Wayland line, sibling to [kiro-niri](../kiro-niri-noctalia/CLAUDE.md) (noctalia-shell) and
 [kiro-ohmyniri](../kiro-ohmyniri/CLAUDE.md) (waybar/kiro-hyprland look). Same niri compositor, DMS
 as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the niri line lives in
 `Kiro-HQ/Kirotux/study-of-niri.md`.
@@ -70,7 +70,7 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
 
 ## Build / delivery
 - Source-of-truth for the config; delivered as the `kiro-niri-dms` package via
-  `../KIROTUX-PKG-BUILD/kiro-niri-dms/build.sh` (public recipe → `~/EDU/nemesis_repo/`). After
+  `~/KIRO-PKG-BUILD-APPS/kiro-niri-dms/build.sh` (public recipe → `~/EDU/nemesis_repo/`). After
   editing here: rebuild the package (recipe `build.sh` or `flow-kiro-niri-dms`), then the ISO to
   test a fresh install.
-- See [../CLAUDE.md](../CLAUDE.md) for the full KIROTUX delivery architecture.
+- See [KIROTUX/CLAUDE.md](../../KIROTUX/CLAUDE.md) for the full KIROTUX delivery architecture.
