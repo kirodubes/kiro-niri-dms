@@ -18,7 +18,8 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
   center, session menu, polkit agent. Driven over `dms ipc call <target> <function>`
   (docs: danklinux.com/docs/dankmaterialshell; local `IPC.md` in the upstream clone). Started with
   `dms run`.
-- **Autostart:** `spawn-sh-at-startup "dms run"` (+ the guarded first-run wallpaper script, explicit
+- **Autostart:** `dms run` (llvmpipe under VirtualBox), `kiro-kvantum-default`, the first-login
+  keyboard-from-installer script (`/etc/vconsole.conf` → `cfg/input.kdl`) (+ the guarded first-run wallpaper script, explicit
   `xdg-user-dirs-update`, the xwayland-satellite bridge, + the archiso-gated Calamares line). niri
   does **not** process `/etc/xdg/autostart`.
 - **Theming:** DMS owns runtime accent colours (runs matugen internally) for its bar + GTK apps.

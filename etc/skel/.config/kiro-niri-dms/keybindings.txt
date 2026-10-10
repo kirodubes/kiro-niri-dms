@@ -27,6 +27,7 @@
   ctrl + alt + E          ArchLinux tweak tool
   ctrl + alt + F          Firefox
   ctrl + alt + G          Chromium
+  ctrl + alt + H          Kirotux Niri Premium (comes with the KIROTUX ISOs)
   ctrl + alt + I          Kiro ISO builder
   ctrl + alt + M          USB image writer
   ctrl + alt + O          Opera
@@ -121,7 +122,7 @@
 
 ── 8. System & Session ────────────────────────────────────────────────────────
   super + X               Logout menu
-  super + shift + X       Power menu
+  super + shift + X       Logout menu
   ctrl + alt + K          Logout menu
   ctrl + alt + L          Logout settings
   super + alt + L         Lock screen (DMS)

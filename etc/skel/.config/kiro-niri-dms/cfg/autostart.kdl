@@ -11,7 +11,18 @@ spawn-sh-at-startup "xwayland-satellite :0"
 // The whole desktop: DankMaterialShell (bar, launcher, lock, notifications,
 // wallpaper, control center, session menu, polkit agent). `dms run` is DMS's
 // own launcher — it starts the Quickshell shell and its backend services.
-spawn-sh-at-startup "dms run"
+// In VirtualBox its GPU paths break DMS's rendering (missing bar), so DMS runs on Mesa llvmpipe there;
+// real hardware and QEMU keep GPU rendering. Same as kiro-hyprland-dms (2026.10.04).
+spawn-sh-at-startup "case $(systemd-detect-virt) in oracle) export LIBGL_ALWAYS_SOFTWARE=1 ;; esac; exec dms run"
+
+// Qt look: KvGnomeDark (matches adw-gtk3-dark) unless the user picked an installed Kvantum theme.
+// The helper comes from kiro-wayland-dotfiles (a dependency).
+spawn-at-startup "kiro-kvantum-default"
+
+// First login of an installed system: use the keyboard layout picked in the installer
+// (/etc/vconsole.conf XKBLAYOUT/XKBVARIANT) instead of the us,be default in cfg/input.kdl.
+// No-op on the live ISO, on later logins (stamp) and when the user already changed the layout.
+spawn-sh-at-startup "~/.config/kiro-niri-dms/scripts/keyboard-from-installer.sh"
 
 // First-login only: point DMS's wallpaper at the shipped Kiro wallpaper so the
 // desktop is Kiro-branded out of the box (DMS then derives its matugen palette

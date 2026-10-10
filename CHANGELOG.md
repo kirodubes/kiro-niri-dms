@@ -3,10 +3,25 @@
 ## 2026.10.10
 
 ### What Changed
+- **Fixes carried over from kiro-hyprland-dms for the KiroTux Niri DMS ISO:**
+  - **Qt apps follow the dark theme:** `kiro-kvantum-default` runs at session start (KvGnomeDark, unless the user
+    picked an installed Kvantum theme). Before, Qt apps used Kvantum's built-in look.
+  - **The keyboard follows the installer:** new first-login script `scripts/keyboard-from-installer.sh` puts
+    `XKBLAYOUT`/`XKBVARIANT` from `/etc/vconsole.conf` into the user's `cfg/input.kdl`. No-op on the live ISO
+    (stays `us,be`), on later logins (stamp) and when the user already changed the layout line.
+  - **The Kiro wallpaper really shows on first login:** `firstrun-wallpaper.sh` keeps setting it until DMS reports
+    it 10 times in a row, because DMS answers `wallpaper set` before its UI has finished starting.
+  - **DMS shows its bar in VirtualBox:** DMS runs on Mesa llvmpipe when `systemd-detect-virt` says `oracle`.
+  - **Binds:** Super+Shift+X opens `archlinux-logout` (`kiro-powermenu` needs rofi, which the ISO doesn't ship).
+    Super+E and Super+F2 open Sublime Text (`subl`) instead of VS Code. New Ctrl+Alt+H opens Kirotux Niri
+    Premium when it's installed, else a notification with a **Get KiroTux** button.
+- Existing installs keep their `~/.config` copy; these reach new installs and users who copy the new defaults.
 - Source repo moved from `~/KIROTUX/kiro-niri-dms` to `~/KIRO/kiro-niri-dms` and its recipe to `~/KIRO-PKG-BUILD-APPS/kiro-niri-dms`: ATT installs it from nemesis_repo, so it is a Kiro package, not KiroTux-only. Paths and links in the docs follow. The package itself is unchanged.
 
 ### Files Modified
 - `CLAUDE.md`, `CHANGELOG.md`
+- `etc/skel/.config/kiro-niri-dms/cfg/autostart.kdl`, `cfg/keybinds.kdl`, `keybindings.txt`
+- `etc/skel/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh`, `scripts/keyboard-from-installer.sh` (new)
 
 ## 2026.10.05
 

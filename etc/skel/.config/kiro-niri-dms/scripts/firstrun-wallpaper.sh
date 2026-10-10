@@ -33,12 +33,21 @@ until pgrep -u "$(id -u)" -x qs >/dev/null; do
     sleep 0.5
 done
 
-# Poll for DMS IPC to come up (up to ~30s), then set the wallpaper.
+# DMS's backend answers `wallpaper set` before its UI finishes the first launch, which then starts with an
+# empty wallpaper. So keep setting it until `wallpaper get` returns ours on 10 checks in a row (~5s stable),
+# for up to ~90s, and only then write the stamp. Same as kiro-hyprland-dms (2026.10.04).
 i=0
-while [ "$i" -lt 60 ]; do
-    if dms ipc call wallpaper set "$wallpaper" >/dev/null 2>&1; then
-        : > "$stamp"
-        exit 0
+stable=0
+while [ "$i" -lt 180 ]; do
+    if [ "$(dms ipc call wallpaper get 2>/dev/null)" = "$wallpaper" ]; then
+        stable=$((stable + 1))
+        if [ "$stable" -ge 10 ]; then
+            : > "$stamp"
+            exit 0
+        fi
+    else
+        stable=0
+        dms ipc call wallpaper set "$wallpaper" >/dev/null 2>&1
     fi
     i=$((i + 1))
     sleep 0.5
