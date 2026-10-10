@@ -25,6 +25,17 @@ window-rule {
     open-focused false
 }
 
+// Calamares: float at 1024x900. It runs on XWayland (xcb), and xwayland-satellite can
+// keep a stale X screen size after the display resizes (seen in a QEMU VM: 1698x952 on
+// a 1920x1080 output). A full-height tiled installer then reaches past the X screen and
+// its Next button ignores clicks.
+window-rule {
+    match app-id="^calamares$"
+    open-floating true
+    default-column-width { fixed 1024; }
+    default-window-height { fixed 900; }
+}
+
 // DankMaterialShell paints its wallpaper on a Quickshell layer surface; place it
 // in niri's backdrop so it shows through the overview and behind transparent
 // windows. (This is DMS's own blessed niri rule — its Quickshell layer namespace
