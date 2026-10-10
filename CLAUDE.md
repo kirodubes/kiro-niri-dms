@@ -40,8 +40,8 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
   `clipboard toggle`, notifications `notifications toggle`; media/volume/brightness via
   `audio`/`mpris`/`brightness` targets.
 - `keybindings.txt` mirrors `cfg/keybinds.kdl` — keep them in lockstep; a duplicate-chord scan must
-  pass. (`kiro-keybindings` and `/kiro-create-keybindings` still need **niri** in their
-  WM-detection table — known line-wide gap.)
+  pass. (`kiro-keybindings` knows niri: it opens this edition's `keybindings.txt` through `NIRI_CONFIG`, since
+  2026-10-10.)
 - Mod = Super. Belgian `be,us` layout (matches the rest of the Kiro line).
 
 ## Patterns / gotchas
