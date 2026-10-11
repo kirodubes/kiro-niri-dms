@@ -13,9 +13,12 @@
   No blur on niri, so the wallpaper shows through sharp. `niri validate` passes.
 - New installs only: the rules ship in `/etc/skel`; existing users get them through `skell` or by copying the two
   rules.
+- `keybindings.txt` header matches kiro-hyprland-dms (parity item 16, second half): title "Kiro Niri
+  (DankMaterialShell)", the stale `Generated: 2026.07.04` line dropped, same `Shell:` line.
 
 ### Files Modified
 - `etc/skel/.config/kiro-niri-dms/cfg/rules.kdl`
+- `etc/skel/.config/kiro-niri-dms/keybindings.txt`
 - `CHANGELOG.md`
 
 ## 2026.10.10
