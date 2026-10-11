@@ -13,6 +13,16 @@ window-rule {
     opacity 0.95
 }
 
+// btop is started as `alacritty --class btop`, so the Alacritty rule above doesn't match it
+window-rule {
+    match app-id="btop" is-active=true
+    opacity 0.80
+}
+window-rule {
+    match app-id="btop" is-active=false
+    opacity 0.75
+}
+
 // Steam: float its sub-windows, keep the main window tiled.
 window-rule {
     match app-id="steam"

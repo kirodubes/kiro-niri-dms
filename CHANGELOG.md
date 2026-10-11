@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026.10.11
+
+### What Changed
+- **btop is transparent like the Hyprland edition.** Ctrl+Alt+End starts btop as `alacritty --class btop`, so niri
+  sees app-id `btop` and the `Alacritty` opacity rule never matched it: btop was the only opaque terminal. New rules
+  give it 0.80 when focused and 0.75 when not, the values kiro-hyprland-dms uses (parity checklist item 16). Tried
+  live on the NVIDIA test box first; Erik: "looks great".
+
+### Technical Details
+- niri has one `opacity` per window rule, so active/inactive are two rules matched with `is-active=true/false`.
+  No blur on niri, so the wallpaper shows through sharp. `niri validate` passes.
+- New installs only: the rules ship in `/etc/skel`; existing users get them through `skell` or by copying the two
+  rules.
+
+### Files Modified
+- `etc/skel/.config/kiro-niri-dms/cfg/rules.kdl`
+- `CHANGELOG.md`
+
 ## 2026.10.10
 
 ### What Changed
