@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026.10.14
+
+### What Changed
+- **The installer tiles again on real hardware.** Calamares now floats (1024x900) only when the live ISO runs in a virtual machine, where the floating window is still needed to keep the Next button clickable. On real metal it opens as a normal tiled window.
+
+### Technical Details
+- The Calamares `window-rule` moved from `cfg/rules.kdl` to the new `cfg/calamares-vm.rule` (no `.kdl`, so niri never reads it on its own). `rules.kdl` now has `include optional=true "calamares-vm.kdl"`. The live-ISO autostart line runs `systemd-detect-virt -q` and, in a VM, copies the rule to `cfg/calamares-vm.kdl`, then waits `sleep 1` while niri hot-reloads the new include before it starts `calamares_polkit`. Tested live on a real-metal box: niri accepts the include while the file is missing, picks the file up when it appears at runtime (next Calamares opens floating 1024x900), and with no VM the installer tiles. The line stays a single line inside the "Live ISO only" comment block, so kiro_final's `sed '/Live ISO only/,/calamares_polkit/d'` still strips it on install. `niri validate` passes with and without the file.
+
+### Files Modified
+- etc/skel/.config/kiro-niri-dms/cfg/rules.kdl, cfg/autostart.kdl, cfg/calamares-vm.rule (new)
+
 ## 2026.10.11
 
 ### What Changed

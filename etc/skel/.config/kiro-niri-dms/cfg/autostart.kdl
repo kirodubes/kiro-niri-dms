@@ -38,4 +38,5 @@ spawn-at-startup "xdg-user-dirs-update"
 // Live ISO only: auto-launch the Calamares installer. Gated on the archiso
 // boot mount so it never fires on an installed system; kiro_final strips this
 // line on install.
-spawn-sh-at-startup "[ -d /run/archiso/bootmnt ] && calamares_polkit -d -style kvantum"
+// In a VM it first enables cfg/calamares-vm.rule (float at 1024x900) and waits for niri to reload.
+spawn-sh-at-startup "[ -d /run/archiso/bootmnt ] && { systemd-detect-virt -q && cp ~/.config/kiro-niri-dms/cfg/calamares-vm.rule ~/.config/kiro-niri-dms/cfg/calamares-vm.kdl && sleep 1; exec calamares_polkit -d -style kvantum; }"
