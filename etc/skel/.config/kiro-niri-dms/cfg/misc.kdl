@@ -6,7 +6,6 @@ screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
 // Session environment. niri exports these to spawned apps and the shell.
 environment {
-    DISPLAY ":0"
     GDK_BACKEND "wayland,x11"
     MOZ_ENABLE_WAYLAND "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"

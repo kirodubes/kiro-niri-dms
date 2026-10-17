@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026.10.17
+
+### What Changed
+- **X11 apps start again on an installed system.** The config pinned `DISPLAY=:0`, but SDDM's greeter Xorg keeps
+  `:0`, so every X11 app launched from the session (VLC, for one) failed to connect and opened no window. niri now
+  runs XWayland itself on a free display.
+
+### Technical Details
+- `cfg/autostart.kdl`: dropped `spawn-sh-at-startup "xwayland-satellite :0"`; `cfg/misc.kdl`: dropped
+  `DISPLAY ":0"` from `environment {}`. niri 25.08+ starts xwayland-satellite on demand and exports `DISPLAY`.
+  The `xwayland-satellite` depend stays, since niri needs the binary. Same fix as kiro-niri-noctalia, where it was
+  found on real metal: VLC 3's Qt interface (X11-only) failed with `xcb_connection_has_error` on `:0` and played
+  fine on niri's `:1`.
+
+### Files Modified
+- `etc/skel/.config/kiro-niri-dms/cfg/autostart.kdl`
+- `etc/skel/.config/kiro-niri-dms/cfg/misc.kdl`
+- `CHANGELOG.md`
+
 ## 2026.10.16
 
 ### What Changed
