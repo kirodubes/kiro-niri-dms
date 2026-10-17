@@ -12,7 +12,7 @@
   `DISPLAY ":0"` from `environment {}`. niri 25.08+ starts xwayland-satellite on demand and exports `DISPLAY`.
   The `xwayland-satellite` depend stays, since niri needs the binary. Same fix as kiro-niri-noctalia, where it was
   found on real metal: VLC 3's Qt interface (X11-only) failed with `xcb_connection_has_error` on `:0` and played
-  fine on niri's `:1`.
+  fine on niri's `:1`. Confirmed by Erik on real metal: VLC launches after upgrade + skell + re-login.
 
 ### Files Modified
 - `etc/skel/.config/kiro-niri-dms/cfg/autostart.kdl`
