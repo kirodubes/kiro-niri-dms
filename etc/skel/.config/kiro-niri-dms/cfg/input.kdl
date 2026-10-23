@@ -5,9 +5,10 @@ input {
     keyboard {
         xkb {
             // US + Belgian, matching the other Kiro editions. Add/remove layouts
-            // to taste; grp:alt_shift_toggle switches between them with Alt+Shift.
+            // to taste; grp:ctrls_toggle switches between them with both Ctrl keys (left + right),
+            // so Alt+Shift stays free for the Variety keys.
             layout "us,be"
-            options "grp:alt_shift_toggle,compose:caps"  // Caps Lock acts as Compose
+            options "grp:ctrls_toggle,compose:caps"  // Caps Lock acts as Compose
         }
         numlock // Enable numlock on startup
     }

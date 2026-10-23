@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026.10.23
+
+### What Changed
+- **Keyboard layout switch moves to both Ctrl keys; Alt+Shift+N/P/T/F change the wallpaper.** With two layouts, Alt+Shift switched the layout the moment both keys were down, so Alt+Shift+N switched the layout and changed the wallpaper too. The layout switch is now left Ctrl + right Ctrl, as on kiro-wayfire and kiro-hyprland-dms. Alt+Shift+N/P/T/F run the same Variety commands as Alt+N/P/T/F, so the keys match the editions where Alt+Shift+N recolours. New installs only. Existing users: change `grp:alt_shift_toggle` to `grp:ctrls_toggle` in `~/.config/kiro-niri-dms/cfg/input.kdl` and copy the four `Alt+Shift` binds from `/etc/skel`.
+- **Alacritty follows the wallpaper's colours.** As on kiro-hyprland-dms: a login helper gives users without an `alacritty.toml` a small one that imports DMS's `~/.config/alacritty/dank-theme.toml`. An existing `alacritty.toml` is never edited. Existing users can run `/etc/skel/.config/kiro-niri-dms/scripts/alacritty-colours.sh` once. The colours follow only when DMS uses its wallpaper (dynamic) theme.
+
+### Technical Details
+- `cfg/input.kdl`: `options "grp:ctrls_toggle,compose:caps"`. `cfg/keybinds.kdl`: four `Alt+Shift+` binds after Alt+W. `cfg/autostart.kdl`: `spawn-sh-at-startup` for the new `scripts/alacritty-colours.sh` (same script as kiro-hyprland-dms). `niri validate` passes.
+- Tested on picard (fresh install, `us,be`), real key presses: Ctrl+Ctrl switches layouts, and Alt+N and Alt+Shift+N each change the wallpaper, bar and terminal colours about 0.8s later. Two findings outside this package: KiroTux Niri Premium's `kirotux-appearance.kdl` replaces niri's whole `xkb` block, which drops this `options` line, so there was no layout switch at all once a layout was picked in the app. And a fresh install starts DMS on the fixed `purple` theme, so the colours don't follow the wallpaper until the theme is set to dynamic.
+
+### Files Modified
+- `etc/skel/.config/kiro-niri-dms/scripts/alacritty-colours.sh` (new)
+- `etc/skel/.config/kiro-niri-dms/cfg/input.kdl`, `etc/skel/.config/kiro-niri-dms/cfg/keybinds.kdl`, `etc/skel/.config/kiro-niri-dms/cfg/autostart.kdl`
+- `etc/skel/.config/kiro-niri-dms/keybindings.txt`
+
 ## 2026.10.17
 
 ### What Changed

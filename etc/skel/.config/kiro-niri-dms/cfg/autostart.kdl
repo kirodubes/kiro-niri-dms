@@ -29,6 +29,9 @@ spawn-sh-at-startup "~/.config/kiro-niri-dms/scripts/keyboard-from-installer.sh"
 // it can poll for DMS's IPC to come up without blocking the rest of startup.
 spawn-sh-at-startup "~/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh"
 
+// Alacritty follows DMS's wallpaper colours: create an alacritty.toml importing dank-theme.toml when there is none.
+spawn-sh-at-startup "~/.config/kiro-niri-dms/scripts/alacritty-colours.sh"
+
 // Create the XDG user dirs (Documents, Music, Pictures, …) on first login —
 // niri doesn't run the xdg-user-dirs autostart, so do it explicitly. Idempotent.
 spawn-at-startup "xdg-user-dirs-update"

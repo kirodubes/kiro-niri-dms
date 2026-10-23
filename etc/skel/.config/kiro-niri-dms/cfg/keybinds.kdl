@@ -90,6 +90,12 @@ binds {
     Alt+Up                              hotkey-overlay-title="Pause wallpaper: Variety" { spawn "variety" "--pause"; }
     Alt+Down                            hotkey-overlay-title="Resume wallpaper: Variety" { spawn "variety" "--resume"; }
     Alt+W                               hotkey-overlay-title="Wallpaper selector: Variety" { spawn "variety" "--selector"; }
+    // Alt+Shift: the same commands, so the keys match the editions where Alt+Shift+N recolours.
+    // DMS re-themes from every wallpaper here, so Alt and Alt+Shift do the same thing.
+    Alt+Shift+N                         hotkey-overlay-title="Next wallpaper: Variety" { spawn "variety" "--next"; }
+    Alt+Shift+P                         hotkey-overlay-title="Previous wallpaper: Variety" { spawn "variety" "--previous"; }
+    Alt+Shift+T                         hotkey-overlay-title="Trash wallpaper: Variety" { spawn "variety" "--trash"; }
+    Alt+Shift+F                         hotkey-overlay-title="Favorite wallpaper: Variety" { spawn "variety" "--favorite"; }
 
     // ─── Window focus & movement (niri column model) ───
     Mod+Q                               { close-window; }
