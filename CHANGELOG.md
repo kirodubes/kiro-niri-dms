@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026.10.24
+
+### What Changed
+- **New keybindings from ohmychadwm, where the key was free:** Super+Shift+B browser, Super+Shift+M Spotify, Super+Ctrl+Shift+A AI agent (`claude` in Alacritty), Super+Ctrl+A volume control and Alt+volume keys for 1% steps (DMS audio IPC, so the OSD shows). Super+K, Super+Ctrl+L and Super+Shift+F are niri's own window/column keys, Super+Shift+N is the DMS notification center and the mic-mute key is DMS's own; they stay as they are. New installs only (skel). Existing users: copy the new lines from `/etc/skel/.config/kiro-niri-dms/cfg/keybinds.kdl` into `~/.config/kiro-niri-dms/cfg/keybinds.kdl`; niri reloads the config by itself.
+
+### Technical Details
+- Each new bind sits next to its sibling (Mod+Shift+B after Mod+B, Mod+Ctrl+A after Mod+V, the Alt+volume pair after XF86AudioLowerVolume) and uses the edition's existing tools; no existing bind changed. niri `spawn` is argv, so the AI agent is `spawn "alacritty" "-e" "claude"`.
+- `keybindings.txt` updated in the same commit; `niri validate` passes (it also rejects duplicate chords).
+
+### Files Modified
+- `etc/skel/.config/kiro-niri-dms/cfg/keybinds.kdl`
+- `etc/skel/.config/kiro-niri-dms/keybindings.txt`
+- `CHANGELOG.md`
+
 ## 2026.10.23
 
 ### What Changed
