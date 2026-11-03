@@ -41,7 +41,7 @@ binds {
     Ctrl+Alt+E                          hotkey-overlay-title="ArchLinux Tweak Tool" { spawn "archlinux-tweak-tool"; }
     Ctrl+Alt+F                          hotkey-overlay-title="Firefox" { spawn "firefox"; }
     Ctrl+Alt+G                          hotkey-overlay-title="Chromium" { spawn "chromium" "-no-default-browser-check"; }
-    Ctrl+Alt+H                          hotkey-overlay-title="Kirotux Niri Premium" { spawn-sh "command -v kirotux-niri-premium >/dev/null && exec kirotux-niri-premium; a=$(notify-send -a Kirotux -i preferences-desktop-theme -A get='Get KiroTux' 'Get Kirotux Niri Premium' 'Theme, window look, wallpaper and keyboard in one app. Comes with the KIROTUX ISOs.'); [ x$a = xget ] && exec xdg-open https://kiroproject.be/kirotux.html"; }
+    Ctrl+Alt+H                          hotkey-overlay-title="Kirotux Niri Premium" { spawn "kiro-premium-hint" "niri"; }
     Ctrl+Alt+I                          hotkey-overlay-title="Kiro ISO builder" { spawn "kiro-iso-builder"; }
     Ctrl+Alt+L                          hotkey-overlay-title="Logout settings" { spawn "archlinux-logout" "--settings"; }
     Ctrl+Alt+M                          hotkey-overlay-title="USB image writer: mintstick" { spawn "mintstick" "-m" "iso"; }
