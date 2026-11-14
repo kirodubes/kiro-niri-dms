@@ -13,7 +13,8 @@
   3 times at most (`.firstrun-dynamic-theme-tries`). New stamp `.firstrun-dynamic-theme-v2-done`. `theme_name()`
   only accepts a quoted answer: right after a start DMS says "No running instances", then "Target not found".
 - Reaches new installs only: the script is copied from `/etc/skel` into the user's home. Tested on picard
-  (hyprland-dms): purple -> dynamic in ~6 s, saved, second run is a no-op, bar stays up.
+  (hyprland-dms) and riker (KiroTux niri-dms, stuck on purple since 2026-11-03): purple -> dynamic in ~6 s,
+  saved, second run is a no-op, bar stays up.
 
 ### Files Modified
 - etc/skel/.config/kiro-niri-dms/scripts/firstrun-wallpaper.sh, CHANGELOG.md
