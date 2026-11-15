@@ -59,6 +59,8 @@ as the shell. Public, open-core, shipped via `nemesis_repo`. Research on the nir
   + `layout { background-color "transparent" }` — no separate wallpaper daemon.
 - No DMS `settings.json` is seeded (runtime-generated; partial seed risks its schema). Wallpaper is
   branded once via `scripts/firstrun-wallpaper.sh` (guarded, polls for `dms ipc` readiness).
+  The same script's `screen_off()` step sets DMS's screen-off to 15 min (`acMonitorTimeout` /
+  `batteryMonitorTimeout` 900, only where still 0) — DMS's own default is never. Idle lock stays off.
 
 ## Sibling editions
 - **`kiro-niri`** (noctalia-shell) and **`kiro-ohmyniri`** (waybar/kiro-hyprland look) — same
