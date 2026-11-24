@@ -59,6 +59,7 @@
 
 ── 2. Window Management ───────────────────────────────────────────────────────
   super + Q               Close window
+  super + shift + Q       Close window
   super + left / H        Focus column left
   super + right / L       Focus column right
   super + up / K          Focus window up

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026.11.24
+
+### What Changed
+- Super+Shift+Q now closes the focused window too, like Super+Q. Every other Kiro edition (ohmychadwm, the Hyprland
+  editions, sway, river, wayfire, labwc, mango) binds both; the niri editions only had Super+Q (found on riker).
+
+### Technical Details
+- `cfg/keybinds.kdl`: `Mod+Shift+Q { close-window; }` right below `Mod+Q`; the chord was free. `keybindings.txt`
+  mirrors it. `niri validate` passes and the duplicate-chord scan is clean.
+- Reaches new installs only (`/etc/skel`); existing installs get it with `skell`.
+
+### Files Modified
+- `etc/skel/.config/kiro-niri-dms/cfg/keybinds.kdl`
+- `etc/skel/.config/kiro-niri-dms/keybindings.txt`
+
 ## 2026.11.15
 
 ### What Changed
